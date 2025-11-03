@@ -1,0 +1,139 @@
+<!--code for internal  of css -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Services Form</title>
+    
+    <style>
+       label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+       
+        button:hover {
+            background: #99faed;
+        } 
+        .logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+span{
+    color: var(--main-color);
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active{
+       color: var(--main-color);
+       border-bottom: 3px solid var(--main-color);
+}
+
+
+    </style> 
+</head>
+ <body style=
+"
+    font-family: Arial, sans-serif;
+    margin: 20%;
+    padding: 20px;
+     box-shadow: #25f43a;
+    background: linear-gradient(to right,rgb(41, 40, 40),rgba(148, 255, 148, 0.178),rgb(41, 40, 40)) ;
+" 
+>
+    <header style="
+        background:#858382;
+        color: #100e0e;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: #25f43a;">
+        
+        <h1>Membership Form</h1>
+         
+        
+    </header>
+    <main>
+        <form style="
+            background: rgb(238, 243, 238);
+            padding: 20px;
+             box-shadow: #25f43a;
+            margin:auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"        
+        action="#" method="post">
+            <label for="patientName">Customer Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+            
+            <label for="age">Customer Age:</label>
+            <input type="number" id="age" name="age" required>
+            
+            <label for="contact">Contact Information:</label>
+            <input type="tel" id="contact" name="contact" required>
+            
+            <label for="reason">Reason for Visit:</label>
+            <select id="reason" name="reason" required>
+                <option value="checkup">Physical Fitness</option>
+                <option value="emergency">Strength Training</option>
+                <option value="consultation">Fat Loss</option>
+                 <option value="consultation">Weightlifting</option>
+                  <option value="consultation">cardio</option>
+                <option value="followup">Follow-up</option>
+            </select>
+            
+            <label for="appointmentDate">Gym Membership Period:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+             
+Time:<input type="time" name="time"><br><br>
+Rating:<input type="range" name="rangevalue"><br><br>
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+            
+            <button  style="
+                background:#4E3629;
+                color: #ffffff;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+            "     type="submit">Submit</button>
+           <a href="home.html" button  style="
+                background:#4E3629;
+                color: #ffffff;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+            "     type="submit">BACK</button></a>
+            
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Royal Fitness. All rights reserved.</p>
+    </footer>
+</>
+</html>

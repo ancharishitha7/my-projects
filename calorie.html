@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      border: none;
+      outline: none;
+      scroll-behavior: smooth;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    :root {
+      --bg-color: #000;
+      --snd-bg-color: #111;
+      --text-color: #fff;
+      --main-color: #45ffca;
+    }
+
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    .logo span {
+      color: var(--main-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      font-size: 1.6rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: var(--main-color);
+    }
+
+    .join-btn {
+      background-color: transparent;
+      border: 2px solid var(--main-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      color: var(--main-color);
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .join-btn:hover {
+      background-color: var(--main-color);
+      color: var(--bg-color);
+    }
+
+    /* Main Tracker Section */
+    main {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+    }
+
+    .tracker-container {
+      background-color: var(--snd-bg-color);
+      padding: 3rem 4rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 20px var(--main-color);
+      text-align: center;
+    }
+
+    .tracker-container h2 {
+      font-size: 3rem;
+      color: var(--main-color);
+      margin-bottom: 2rem;
+    }
+
+    form input[type="text"],
+    form input[type="number"] {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #2b2b2b;
+      color: white;
+      font-size: 1.6rem;
+      border-radius: 10px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--main-color);
+      color: var(--bg-color);
+      font-weight: bold;
+      font-size: 1.6rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background-color: #00e69e;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 2rem;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #444;
+      text-align: center;
+    }
+
+    table tfoot td {
+      font-weight: bold;
+      color: var(--main-color);
+    }
+
+    table button {
+      padding: 0.5rem 1rem;
+      background-color: crimson;
+      color: white;
+      font-size: 1.3rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    table button:hover {
+      background-color: darkred;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--main-color);
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 55%;
+      }
+
+      .tracker-container {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      html {
+        font-size: 50%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .join-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .tracker-container h2 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><span>Royal</span>Fitness</div>
+    <ul class="nav-links">
+     <li><a href="home.html">Home</a></li>
+            <li><a href="home.html">Services</a></li>
+            <li><a href="home.html">About Us</a></li>
+            <li><a href="home.html">Pricing</a></li>
+            <li><a href="home.html">Review</a></li>
+    </ul>
+    <a href="joinus.html" class="join-btn">Join Us</a>
+  </nav>
+
+  <!-- Calorie Tracker Section -->
+  <main>
+    <div class="tracker-container">
+      <h2>Live Calorie Tracker</h2>
+      <form id="calorie-form">
+        <input type="text" id="food" placeholder="Food Item" required />
+        <input type="number" id="calories" placeholder="Calories" required />
+        <button type="submit">Add</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Calories</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="calorie-list"></tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td id="total-calories">0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('calorie-form');
+    const foodInput = document.getElementById('food');
+    const calorieInput = document.getElementById('calories');
+    const list = document.getElementById('calorie-list');
+    const totalDisplay = document.getElementById('total-calories');
+
+    let entries = JSON.parse(localStorage.getItem('calorieEntries')) || [];
+
+    function updateUI() {
+      list.innerHTML = '';
+      let total = 0;
+
+      entries.forEach((entry, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${entry.food}</td>
+          <td>${entry.calories}</td>
+          <td><button onclick="removeEntry(${index})">Remove</button></td>
+        `;
+        list.appendChild(row);
+        total += Number(entry.calories);
+      });
+
+      totalDisplay.textContent = total;
+      localStorage.setItem('calorieEntries', JSON.stringify(entries));
+    }
+
+    function removeEntry(index) {
+      entries.splice(index, 1);
+      updateUI();
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const food = foodInput.value.trim();
+      const calories = parseInt(calorieInput.value.trim());
+
+      if (!food || isNaN(calories)) return;
+
+      entries.push({ food, calories });
+      updateUI();
+      form.reset();
+    });
+
+    updateUI();
+  </script>
+
+</body>
+</html>
